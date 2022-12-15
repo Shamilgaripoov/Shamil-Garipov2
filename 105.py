@@ -1,0 +1,6 @@
+file = open("Numbers.txt.", "w")
+file.write("1, 2, 3, 4, 5 \n")
+file.close()
+file = open("Numbers.txt.", "r")
+print(file.read())
+file.close()
