@@ -25,7 +25,7 @@ enter_txt.place(x = 150, y = 20, width = 100, height = 25)
 enter_txt["justify"] = "center"
 enter_txt.focus()
 
-add_btn = Button(text = "Добавить", command = add_on)
+add_btn = Button(text = "Добавить", command = get_on)
 add_btn.place(x = 300, y = 20, width = 70, height = 25)
 
 output_lbl = Label(text = "Ответ = ")
