@@ -25,7 +25,7 @@ textbox1.place(x = 150, y = 200, width = 200, height = 25)
 textbox1["justify"] = "center"
 textbox1.focus()
 
-button = Button(text = "Press me", command = click)
+button = Button(text = "Press me", command = programma)
 button.place(x = 30, y = 250, width = 120, height = 25)
 
 button["bg"] = "green"
