@@ -1,13 +1,20 @@
 from tkinter import *
 
-def get_rass():
+def get_km():
     km = textbox1.get()
     km = int(km)
-    mile = 0,6214
-    kmvmile = km * mile
+    kmvmile = km * 0,6214
     textbox2.delete(0, END)
     textbox2.insert(END, kmvmile)
     textbox2.insert(END, "mile")
+    
+def get_miles():
+    mile = textbox1.get()
+    mile = int(mile)
+    message = mile * 1.6093
+    textbox2.delete(0, END)
+    textbox2.insert(END, message)
+    textbox2.insert(END, " km")
 
 window = Tk()
 window.title("Расстояние")
@@ -22,10 +29,10 @@ textbox1.place(x = 30, y = 50, width = 200, height = 25)
 textbox1["justify"] = "center"
 textbox1.focus()
 
-convert1 = Button(text = "Преоброзовать милли в киллометр", command = get_rass)
+convert1 = Button(text = "Преоброзовать милли в киллометр", command = get_km)
 convert1.place(x = 30, y = 80, width = 200, height = 25)
 
-convert2 = Button(text = "Преобразовать киллометр в мили", command = get_rass)
+convert2 = Button(text = "Преобразовать киллометр в мили", command = get_miles)
 convert2.place(x = 30, y = 110, width = 200, height = 25)
 
 textbox2 = Entry(text = "")
