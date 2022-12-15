@@ -1,0 +1,7 @@
+file = open("Names.txt", "a")
+new_name = input("Введите новое имя: ")
+file.write(f"{new_name}\n")
+file = open("Names.txt", "r")
+print(file.read())
+print(new_name)
+file.close()
