@@ -5,51 +5,59 @@ import random
 def progras():
     theirans = ansbox.get()
     theirans = int(theirans)
-    num1 = num1box["text"]
-    num1 = int(num1)
-    num2 = num2box["text"]
-    num2 = int(num2)
-    ans = num1 + num2
-        if their ans == ans:
-            img = PhotoImage(file = "correct.gif")
-            imgbx.image = img
-        else:
-            img = PhotoImage(file = "wrong.gif")
-    imgbx.image = img
-    imgbx["image"] = img
-    imgbx.update()
-def nextquestion():
+    x1 = msg2["text"]
+    x1 = int(x1)
+    x2 = msg2["text"]
+    x2 = int(x2)
+    sum = x1 + x2
+    if theirans == sum:
+        img = PhotoImage(file = "correct.gif")
+        msg4.image = img
+    else:
+        img = PhotoImage(file = "wrong.gif")
+        msg4.image = img
+    msg4["image"] = img
+    msg4.update()
+def nextprogram():
     ansbox.delete(0, END)
-    num1 = random.randing(10, 50)
-    num1box["text"] = num1
-    num2 = random.randing(10, 50)
-    num2box["text"] = num2
+    x1 = random.randing(10, 100)
+    msg1["text"] = x1
+    x2 = random.randing(10, 100)
+    msg2["text"] = x2
     img = PhotoImage(file = "")
-    imgbx.image = img
-    imgbx["image"] = img
-    imgbx.update()
+    msg4.image = img
+    msg4["image"] = img
+    msg4.update()
 window = Tk()
 window.title("Addition")
-window.geometry("250x300")
-num1box = Label(text = "0")
-num1box.place(x = 50, y = 30, width = 25, height = 25)
+window.geometry("350x300")
+
+msg1 = Label(text = "0")
+msg1.place(x = 50, y = 30, width = 25, height = 25)
+
 addsymbl = Message(text = "+")
 addsymbl.place(x = 75, y = 30, width = 25, height = 25)
-num2box = Label(text = "0")
-num2box.place(x = 100, y = 30, width = 25, height = 25)
-eqlsymbl = Message(text = "=")
-eqlsymbl.place(x = 125, y = 30, width = 25, height = 25)
+msg2 = Label(text = "0")
+msg2.place(x = 100, y = 30, width = 25, height = 25)
+
+msg3 = Message(text = "=")
+msg3.place(x = 125, y = 30, width = 25, height = 25)
+
 ansbox = Entry(text = "")
 ansbox.place(x = 150, y = 30, width = 25, height = 25)
 ansbox["justify"] = "center"
 ansbox.focus()
-checkbtn = Button(text = "Check", command = checkans)
+
+checkbtn = Button(text = "Check", command = progras)
 checkbtn.place(x = 50, y = 60, width = 75, height = 25)
-nextbtn = Button(text = "Next", command = nextquestion)
+
+nextbtn = Button(text = "Next", command = nextprogram)
 nextbtn.place(x = 130, y = 60, width = 75, height = 25)
+
 img = PhotoImage(file = "")
-imgbx = Label(image = img)
-imgbx.image = img
-imgbox.place(x = 25, y = 100, width = 200, height = 150)
-nextquestion()
+msg4 = Label(image = img)
+msg4.image = img
+msg4.place(x = 25, y = 100, width = 200, height = 150)
+nextprogram()
+
 window.mainloop()
