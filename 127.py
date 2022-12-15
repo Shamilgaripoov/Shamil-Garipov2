@@ -22,7 +22,7 @@ name_box.focus()
 
 msg2 = Label(text = "Список имен: ")
 msg2.place(x = 20, y = 80, width = 100, height = 25)
-button1 = Button(text = "Добавить", command = add_name)
+button1 = Button(text = "Добавить", command = get_name)
 button1.place(x = 250, y = 20, width = 130, height = 25)
 name_list = Listbox()
 
